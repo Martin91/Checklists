@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F19a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="79V-oE-CtQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F25a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gLd-gf-aMg">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Checklist View Controller-->
+        <!--Checklist-->
         <scene sceneID="ZUT-yY-ZIX">
             <objects>
                 <tableViewController id="79V-oE-CtQ" customClass="ChecklistViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,8 +33,33 @@
                             <outlet property="delegate" destination="79V-oE-CtQ" id="par-w1-aRv"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Checklist" id="ntB-P1-f4Z">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4zI-zS-eg6">
+                            <connections>
+                                <action selector="addItem" destination="79V-oE-CtQ" id="d09-nJ-DaV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cdb-po-cjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1290" y="292"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Pca-vw-hQf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gLd-gf-aMg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8NK-Oc-jxN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="79V-oE-CtQ" kind="relationship" relationship="rootViewController" id="BhS-PN-YFP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVG-PF-2Bz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="478" y="292"/>
         </scene>
