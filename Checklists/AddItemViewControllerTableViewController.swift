@@ -9,6 +9,12 @@
 import UIKit
 
 class AddItemViewControllerTableViewController: UITableViewController {
+    
+    override func tableView(tableView: UITableView,
+        willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+
+        return nil
+    }
 
     @IBAction func cancel() {
         dismissViewControllerAnimated(true, completion: nil)
