@@ -8,8 +8,22 @@
 
 import UIKit
 
-class AddItemViewControllerTableViewController: UITableViewController {
+class AddItemViewControllerTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var doneBarButton: UIBarButtonItem!
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        
+        let oldText: NSString = textField.text
+        let newText: NSString = oldText.stringByReplacingCharactersInRange(range, withString: string)
+        
+        if newText.length > 0 {
+            doneBarButton.enabled = true
+        } else {
+            doneBarButton.enabled = false
+        }
+        return true
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
